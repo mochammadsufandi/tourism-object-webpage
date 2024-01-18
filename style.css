@@ -1,0 +1,113 @@
+/* variable for styling */
+:root {
+    --primary: rgb(218, 52, 52);
+    --bg : rgb(25,25,25);
+    --navcolor : #764aa2;
+    --line : rgb(190, 190, 223);
+}
+
+/* Setting the default style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none
+}
+
+/* Setting default fontsize, BG-color, display */
+body {
+    font-family: 'Noto Sans';
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 200rem;
+}
+
+header {
+    width: 100%;
+    background-color: rgb(190, 190, 223);
+    padding: 0.1rem 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .link-logo > img{
+    height: 5rem;    
+}
+header > .navbar {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: bisque; */
+    padding: 1rem 0;
+    width: 60%;
+    
+}
+header > .option-change {
+    display: flex;
+    gap: 3rem;
+    
+    /* background-color: aquamarine; */
+}
+
+header > .option-change > .switch {
+    position: relative;
+    background-color: #764aa2;
+    width: 80px;
+    height: 40px;
+    border-radius: 34px;
+    text-align: center;
+}
+header > .option-change > .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+header > .option-change > .switch > .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f9b1b1;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+header > .option-change > .switch > .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+header > .option-change > .switch > input:checked + .slider {
+    background-color: #2196F3;
+}
+  
+header > .option-change > .switch > input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+header > .option-change > .switch >  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+header > .option-change > .switch > .slider.round {
+    border-radius: 34px;
+    text-align: center;
+}
+header > .option-change > .switch > .slider.round:before {
+    border-radius: 50%; 
+}
