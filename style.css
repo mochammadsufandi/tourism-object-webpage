@@ -1,6 +1,6 @@
 /* variable for styling */
 :root {
-    --primary: rgb(218, 52, 52);
+    --primary: rgb(46, 11, 84);
     --bg : rgb(25,25,25);
     --navcolor : #764aa2;
     --line : rgb(190, 190, 223);
@@ -13,21 +13,31 @@
     box-sizing: border-box;
     outline: none;
     border: none;
-    text-decoration: none
+    text-decoration: none;
+}
+
+/*  ================ For Resizing Icon ==================== */
+.feather-1 {
+    width: 28px;
+    height: 28px;
+}
+.feather-2 {
+    width: 22px;
+    height:22px;
 }
 
 /* Setting default fontsize, BG-color, display */
 body {
     font-family: 'Noto Sans';
-    color: #fff;
+    color: black;
     display: flex;
     flex-direction: column;
-    height: 200rem;
+    /* height: 200rem; */
 }
 
 header {
     width: 100%;
-    background-color: rgb(190, 190, 223);
+    background-color: rgba(173, 232, 134, 0.7);
     padding: 0.1rem 5%;
     position: fixed;
     top: 0;
@@ -37,9 +47,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px black solid;
 }
 header .link-logo > img{
-    height: 5rem;    
+    height: 4rem;    
 }
 header > .navbar {
     /* width: 100%; */
@@ -47,25 +58,131 @@ header > .navbar {
     justify-content: space-evenly;
     /* background-color: bisque; */
     padding: 1rem 0;
-    width: 60%;
-    
+    width: 50%;
+    margin-left: 4rem;
 }
+header > .navbar > a {
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-top: 10px;
+    text-decoration: none;
+}
+header > .navbar > .x-close {
+    display: none;
+}
+header > .navbar > a:hover {
+    color: var(--primary);
+}
+header > .navbar > a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.1rem;
+    border-bottom: var(--primary) 0.1rem solid;
+    transform: scaleX(0);
+}
+header > .navbar > a:hover::after {
+    transform: scaleX(0.7);
+    transition: 0.2s linear;
+}
+header > .navbar > .dropdown-container1 {
+    padding-top: 10px;
+    position: relative;
+    display: inline-block;
+}
+header > .navbar > .dropdown-container1 > a {
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+header > .navbar > .dropdown-container1 > a:hover {
+    color: var(--primary);
+}
+header > .navbar > .dropdown-container1 > a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0.1rem;
+    border-bottom: var(--primary) 0.1rem solid;
+    transform: scaleX(0);
+}
+header > .navbar > .dropdown-container1 >a:hover::after {
+    transform: scaleX(0.7);
+    transition: 0.2s linear;
+}
+header > .navbar > .dropdown-container1 > .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    /* margin-top: 0.3rem; */
+    z-index: 1;
+}
+header > .navbar > .dropdown-container1:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+header > .navbar > .dropdown-container1 > .dropdown-content > a {
+    color: black;
+    padding-top: 0.4rem;
+    text-decoration: none;
+}
+header > .navbar > .dropdown-container1 > .dropdown-content > a:hover {
+    transform: scale(1.05);
+    color: red;
+    transition: 0.2s linear;
+}
+
 header > .option-change {
     display: flex;
     gap: 3rem;
-    
-    /* background-color: aquamarine; */
+}
+header > .option-change > .language {
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+header > .option-change > .language > a {
+    color: black;
+}
+header > .option-change > .language > .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+header > .option-change > .language:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+}
+header > .option-change > .language > .dropdown-content > a{
+    color: black;
+    padding-top: 0.4rem;
+    text-decoration: none;
+}
+header > .option-change > .language > .dropdown-content > a:hover {
+    transform: scale(1.05);
+    color: red;
+    transition: 0.2slogo;
 }
 
 header > .option-change > .switch {
     position: relative;
-    background-color: #764aa2;
     width: 80px;
     height: 40px;
     border-radius: 34px;
     text-align: center;
+    margin-top: 5px;
+    display: flex;
+    gap: 1rem;
 }
-header > .option-change > .switch input { 
+header > .option-change > .switch > input { 
     opacity: 0;
     width: 0;
     height: 0;
@@ -77,32 +194,36 @@ header > .option-change > .switch > .slider {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #f9b1b1;
+    background-color: #1e0b0b;
     -webkit-transition: .4s;
     transition: .4s;
+    padding-top: 7px;
 }
 header > .option-change > .switch > .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
+    height: 32px;
+    width: 33px;
+    right: 5px;
     bottom: 4px;
-    background-color: white;
+    background-color: rgb(236, 208, 172);
     -webkit-transition: .4s;
     transition: .4s;
 }
 header > .option-change > .switch > input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #d9c379;
+}
+header > .option-change > .switch > input:checked + .slider::before {
+    background-color: #494846;
 }
   
 header > .option-change > .switch > input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #79300e;
 }
 header > .option-change > .switch >  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(-36px);
+    -ms-transform: translateX(-36px);
+    transform: translateX(-36px);
 }
 header > .option-change > .switch > .slider.round {
     border-radius: 34px;
@@ -110,4 +231,208 @@ header > .option-change > .switch > .slider.round {
 }
 header > .option-change > .switch > .slider.round:before {
     border-radius: 50%; 
+}
+header > .hamburger-menu  {
+    display: none;
+    margin-top: 10px;
+}
+
+
+.landing-page-container {
+    position: relative;
+}
+.landing-page-container > video {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    border-bottom: #1e0b0b 3px solid;
+}
+
+.main-container {
+    padding: 5rem 2% 3rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+    border-bottom: #1e0b0b 1.3px solid;
+}
+
+.main-container > .content-header  {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.main-container > .content-header > h1  {
+    color: #1e0b0b;
+    font-weight: 700;
+    font-size: 1.7rem;
+    background-color: rgba(229, 185, 185,0.4);
+    padding: 1rem 1rem;
+    box-shadow: rgba(0,0,0,0.2) 1px 1px 2px 2px;
+    border-radius: 3px;   
+}
+.main-container > .content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.3rem 1rem;
+    box-shadow: rgba(0,0,0,0.2) 1px 2px 3px 3px;
+    border-radius: 15px; 
+    width: 30%;
+    height: fit-content;
+    overflow: hidden;
+}
+.main-container > .content > h2 {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    width: 100%;
+}
+.main-container > .content > div {
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+}
+.main-container > .content > div > p {
+    color: red;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+.main-container > .content > p {
+    padding: 1rem 2rem;
+    font-weight: 300;
+    font-size: 1rem;
+    width: 100%;
+    
+}
+.main-container > .content > .read-more {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0 2rem;
+    background-color: #359e16;
+    width: fit-content;
+    gap: 1rem;
+    margin: 1rem 2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.main-container > .content > img {
+    width: 100%;
+    height: 17rem;
+    
+}
+
+/* Article Gallery Start */
+.gallery-content {
+    padding: 6rem 2% 3rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(237, 188, 195, 0.2)  ;
+}
+.gallery-content > .header-gallery {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+.gallery-content > .column-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    margin-right: 8px;
+}
+.gallery-content > .column-gallery > img {
+    width: 100%;
+    margin-top: 8px;
+}
+
+
+
+/* Laptop */
+@media (max-width:1080px) {
+    .main-container > .content {
+        width: 45%;
+    }   
+}
+
+
+/* Tablet */
+@media (min-width:768px) and (max-width:1024px) {
+    html {
+        font-size: 80%;
+    }
+    header > .navbar {
+        width: 60%;
+        justify-content: space-between;
+    }
+}
+
+/* Smartphone1 */
+@media (max-width:850px) {
+    .gallery-content > .column-gallery {
+        width: 40%;
+    }
+}
+@media (max-width:550px) {
+    .main-container > .content {
+        width: 70%;
+    }
+    .gallery-content > .column-gallery {
+        width: 70%;
+    }
+}
+@media (min-width:320px) and (max-width:768px) {
+    html {
+        font-size: 70%;
+    }
+    header {
+        justify-content: space-between;
+        gap: 2rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    header > .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 999;
+        height: 100vh;
+        background-color: rgba(55, 31, 31, 0.8);
+        transition: 0.3s;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: first baseline;
+        padding: 4.5rem 2rem 0;
+        row-gap: 2rem;
+    }
+    header > .navbar > a   {
+        color: #cec5c5 ;
+    }
+    header > .navbar > .dropdown-container1 > a   {
+        color: #cec5c5 ;
+    }
+    header > .navbar.active {
+        right: -15%;
+        transition: 0.3s;
+    }
+    header > .hamburger-menu {
+        display: inline-block;
+        color: #1e0b0b;
+        z-index: 1000;
+        position: relative;
+    }
+    header > .navbar > a::after {
+        transform-origin: 0 0;
+    }
+    header > .navbar > a:hover::after {
+        transform: scaleX(0.2); 
+    }
+    header > .navbar > .dropdown-container1 > a::after {
+        transform-origin: 0 0;
+    }
+    header > .navbar > .dropdown-container1 > a:hover::after {
+        transform: scaleX(0.4);
+    }
 }

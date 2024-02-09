@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <!-- My Style -->
     <link rel="stylesheet" href="style.css">
 
@@ -19,38 +22,225 @@
     
 </head>
 
-<body>
+<body class="bg-dark">
     <!-- Header Start -->
     <header class="header-container">
-        <a href="#" class="link-logo"> <img src="../img/logo.png" alt="GGakkeluar"></a>
-        <nav class="navbar">
-            <a href="#" class="nav1">What's On</a>
-            <a href="#" class="nav2">Shopping Center</a>
+        <a href="#" class="link-logo"> <img src="img/logo1.png" alt="Gakkeluar"></a>
+        <nav class="navbar" id="navbar">
+            <a href="#main-content" class="nav1">What's On</a>
+            <a href="#gallery-content" class="nav2">Shopping Center</a>
             <a href="#" class="nav3">Culinary</a>
-            <a href="#" class="nav4">Accomodation</a>
-            <a href="#" class="nav5">Travel Kit</a>
+            <div class="dropdown-container1">
+                <a href="#" class="nav4">Accomodation</a>
+                <div class="dropdown-content">
+                    <a href="#">Hotel</a>
+                    <a href="#">Transportation</a>
+                </div>
+            </div>
+            <div class="dropdown-container1">
+                <a href="#" class="nav5">Travel Kit</a>
+                <div class="dropdown-content">
+                    <a href="#">Map</a>
+                    <a href="#">E-book</a>
+                    <a href="#">Travel Guide</a>
+                    <a href="#">Bus SSCT</a>
+                </div>
+            </div>
+            
         </nav>
         <div class="option-change">
-            <a href="#" class="Language">
-                <i data-feather="globe"></i>
-            </a>
+            <div class="language">
+                <a href="#">
+                    <i data-feather="globe" class="feather-1"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#">Indonesia</a>
+                    <a href="#">English</a>
+                </div>
+            </div>
+            
             <label class="switch">
                 <input type="checkbox" checked>
-                <span class="slider round">
-                    <i data-feather="sun"></i>
+                <span class="slider round"> 
                     <i data-feather="moon"></i>
+                    <i data-feather="sun"></i>
                 </span>
-                
-            </label>   
+            </label>     
         </div>
+        <a href="#navbar" class="hamburger-menu feather-1">
+            <i data-feather="menu"></i>
+        </a>
         
     </header>
+    <!-- Header & Navbar End -->
 
-    <i data-feather="arrow-down"></i>
+    <!-- Landing Page Start -->
+    <div class="landing-page-container">
+        <video src="Videos/Videos.mp4" preload="auto" autoplay muted loop class="landing-page"></video>
+    </div>
+    <!-- Landing Page End -->
+
+    <!-- Content Section Start -->
+    <main class="main-container" id="main-content">
+        
+        <div class="content-header">
+            <h1>Let's Visit This Place</h1>
+        </div>
+        
+        <div class="content bg-secondary">
+            <h2>5 Tempat Dinner yang Wajib Dicoba</h2>
+            <div>
+                <p class="date">Monday, 22 Januari 2024</p>
+                <p class="writer">SiXiHa</p>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam commodi hic dolorum nemo iste dolorem quas odit temporibus quia.
+            </p>
+            <div class="read-more">
+                <a href="#">Read More</a>
+                <a href="#">
+                    <i data-feather="arrow-right" class="feather-2"></i>
+                </a>
+            </div>
+            <img src="img/dinner.jpg" alt="">
+        </div>
+        <div class="content bg-secondary">
+            <h2>7 Pantai yang Wajib Dikunjungi</h2>
+            <div>
+                <p class="date">Monday, 22 Januari 2024</p>
+                <p class="writer">SiXiHa</p>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam commodi hic dolorum nemo iste dolorem quas odit temporibus quia.
+            </p>
+            <div class="read-more">
+                <a href="#">Read More</a>
+                <a href="#">
+                    <i data-feather="arrow-right" class="feather-2"></i>
+                </a>
+            </div>
+            <img src="img/beach.jpg" alt="">
+        </div>
+        <div class="content">
+            <h2>Gunung dengan Keindahannya
+            </h2>
+            <div>
+                <p class="date">Monday, 22 Januari 2024</p>
+                <p class="writer">SiXiHa</p>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam commodi hic dolorum nemo iste dolorem quas odit temporibus quia.
+            </p>
+            <div class="read-more">
+                <a href="#">Read More</a>
+                <a href="#">
+                    <i data-feather="arrow-right" class="feather-2"></i>
+                </a>
+            </div>
+            <h3></h3>
+            <img src="img/mountain.jpg" alt="">
+        </div>
+        <div class="content">
+            <h2>Pasar Rakyat Apung</h2>
+            <div>
+                <p class="date">Monday, 22 Januari 2024</p>
+                <p class="writer">SiXiHa</p>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam commodi hic dolorum nemo iste dolorem quas odit temporibus quia.
+            </p>
+            <div class="read-more">
+                <a href="#">Read More</a>
+                <a href="#">
+                    <i data-feather="arrow-right" class="feather-2"></i>
+                </a>
+            </div>
+            <h3></h3>
+            <img src="img/market.jpeg" alt="">
+        </div>
+        <div class="content">
+            <h2>Museum Nasional</h2>
+            <div>
+                <p class="date">Monday, 22 Januari 2024</p>
+                <p class="writer">SiXiHa</p>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam commodi hic dolorum nemo iste dolorem quas odit temporibus quia.
+            </p>
+            <div class="read-more">
+                <a href="#">Read More</a>
+                <a href="#">
+                    <i data-feather="arrow-right" class="feather-2"></i>
+                </a>
+            </div>
+            <h3></h3>
+            <img src="img/museum.jpg" alt="">
+        </div>
+        <div class="content">
+            <h2>Air Terjun</h2>
+            <div>
+                <p class="date">Monday, 22 Januari 2024</p>
+                <p class="writer">SiXiHa</p>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nam commodi hic dolorum nemo iste dolorem quas odit temporibus quia.
+            </p>
+            <div class="read-more">
+                <a href="#">Read More</a>
+                <a href="#">
+                    <i data-feather="arrow-right" class="feather-2"></i>
+                </a>
+            </div>
+            <img src="img/waterfall.jpg" alt="">
+        </div>
+    </main>
+
+    <article class="gallery-content" id="gallery-content">
+        <h1 class="header-gallery">Our Gallery</h1>
+        <div class="column-gallery">
+            <img src="img/city-night-view.jpeg" alt="">
+            <img src="img/Tunjungan Plaza.jpg" alt="">
+            <img src="img/madakaripura.jpeg" alt="">     
+        </div>
+        <div class="column-gallery">
+            <img src="img/kenjeran beach.jpg" alt="">
+            <img src="img/kenjeran beach1.jpeg" alt="">
+            <img src="img/resto1.jpg" alt="">
+            <img src="img/bromo.jpeg" alt="">
+        </div>
+        <div class="column-gallery">
+            <img src="img/resto2.jpg" alt="">
+            <img src="img/hotel2.jpg" alt="">
+            <img src="img/resto1.jpg" alt="">
+        </div>
+        <div class="column-gallery">
+            <img src="img/hotel1.jpg" alt="">
+            <img src="img/kenjeran beach1.jpeg" alt="">
+            <img src="img/mist.jpg" alt="">
+            <img src="img/hotel3.jpeg" alt="">
+            
+        </div>
+    </article>
+    
+    <div class="card gusi" style="width: 18rem;">
+        <img src="img/beach.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    
+    
 
     <script>
         feather.replace();
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

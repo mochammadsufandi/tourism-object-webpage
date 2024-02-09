@@ -2,9 +2,12 @@
     "folders": [
         {
             "path": "."
+        },
+        {
+            "path": "../../../../Bismillah/folder2"
         }
     ],
     "settings": {
-        "liveServer.settings.multiRootWorkspaceName": "tourism spot webpage"
+        "liveServer.settings.multiRootWorkspaceName": "src"
     }
 }
